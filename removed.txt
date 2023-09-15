@@ -1,0 +1,65 @@
+if( data.Password===''){
+                    alert('Enter the password') 
+                }
+                else{
+                    if(JSON.parse(localStorage.getItem('Admin')).name === data.name)
+                    {
+                        if(JSON.parse(localStorage.getItem('Admin')).Password === data.Password){
+                            window.location='./Home.html'
+                        }
+                        else{
+                            // alert('wrong pass')
+                            inputs.pass.style.border='1px solid #b71d2c';
+                            display.innerHTML=`Wrong password`;
+                            display.classList.add('text-danger');
+                        }
+                    }
+                    else(
+                        alert('You are not Admin!!')
+                    )
+                }
+
+
+
+
+
+
+
+
+
+// function SortEmp(){
+//     console.log(true);
+//     arr.sort((a, b) => {
+//                 return a.Employee_Experience - b.Employee_Experience ;
+//             });
+//             Table.innerHTML=`
+//             <thead>
+//             <tr>
+//                 <th>id</th>
+//                 <th>Name</th>
+//                 <th>Designation</th>
+//                 <th>Experience</th>
+//                 <th>Address</th>
+//                 <th class="text-center">Actions</th>
+//             </tr>
+//             </thead>
+//             `;
+//             arr.forEach(e=>{
+//                         if(e.name!==AdminData.name){
+//                             Table.innerHTML+=`
+//                                      <tr>
+//                                         <td>${e.Employee_ID}</td>
+//                                         <td>${e.Employee_Name}</td>
+//                                         <td>${e.Employee_Designation}</td>
+//                                         <td>${e.Employee_Experience}</td>
+//                                         <td>${e.Employee_Address}</td>
+//                                         <td>
+//                                         <button class="btn btn-edit  w-25"  onclick="editCurrent(${e.Employee_ID})"><i class="fa-solid fa-pen-to-square"></i></button>
+//                                         <button class="btn btn-remove  w-25"  onclick="removeCurrent(${e.Employee_ID})"><i class="fa-solid fa-trash"></i></button>
+//                                         </td>
+//                                         </tr>       
+//                                         `
+//                                     }
+//                     }),false
+// }
+// Sort.addEventListener("Click",SortEmp);

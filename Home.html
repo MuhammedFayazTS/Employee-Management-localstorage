@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./homestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <script src="./homescript.js"></script> -->
+</head>
+<body>
+    
+    <div class="container">
+
+        <button class="btn logout" onclick="logout()">Logout</button>
+        <div class="row">
+            <div class="col-12">
+                <h2 id="heading">Welcome</h2>
+            </div>
+            <div class="col-sm-6 col my-1  py-4 px-4">
+                <h5 class="h5 my-4 heading">Enter employee details</h5> 
+                <input type="text" class="emp_Details  my-2" placeholder="Employee id" onchange="empty()">
+                <input type="text" class="emp_Details  my-2" placeholder="Employee name" onchange="empty()">
+                <input type="text" class="emp_Details  my-2" placeholder="Employee designation">
+                <input type="text" class="emp_Details  my-2" placeholder="Employee experience">
+                <input type="text" class="emp_Details  my-2" placeholder="Employee Address">
+                <button class="btn my-1" onclick="empSubmit()">Submit</button>
+            </div>
+
+            <div class="col-sm-2 col-0 "></div>
+            <!-- search -->
+            <div class="col-sm-4 col">
+                <h5 class="h5">Find employee details</h5>
+                <div class="search-bar">
+                    <input type="search" name="" id="search" placeholder="Employee id" onchange="search()">
+                    <button class="btn search-btn"  onclick="search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div id="searchResults">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container table-container py-3">
+        <button class="btn my-2 Alldetails" onclick="displayDetails()">View all Employee details</button>
+        <button class="btn my-2 Alldetails" id="sort" onclick="sortEmp()">Sort</button>
+        <table class="table  table-bordered d-none"  id="table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Experience</th>
+                    <th>Address</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <!-- <tr>
+                <td>1</td>
+                <td>Fayaz</td>
+                <td>Developer</td>
+                <td>Developer</td>
+                <td>Developer</td>
+            </tr> -->
+        </tr>
+    </table>
+</div>
+<div  id="toast-container">
+</div>
+
+<p class="text-center" id="clearItems">Clear all Employee <button class="btn btn-danger" onclick="clearEmps()">Clear</button></p>
+
+
+   <script src="./homescript.js"></script>
+</body>
+</html>
